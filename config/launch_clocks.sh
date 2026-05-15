@@ -1,9 +1,5 @@
-#!/bin/bash
-
-# Allow the display manager to fully map all monitor geometries
 sleep 15
 
-# Dynamic fallback to primary local display socket if environment is bare
 if [ -z "$DISPLAY" ]; then
     export DISPLAY=:0
 fi

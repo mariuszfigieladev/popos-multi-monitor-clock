@@ -1,5 +1,3 @@
-#!/bin/bash
-
 set -e
 
 echo "Installing dependencies and modern fonts..."

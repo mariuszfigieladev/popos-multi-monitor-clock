@@ -1,4 +1,3 @@
--- Cairo Rounded Background Script for Conky
 require 'cairo'
 
 -- Main drawing function called by Conky
@@ -9,10 +8,9 @@ function conky_draw_bg()
     local cs = cairo_xlib_surface_create(conky_window.display, conky_window.drawable, conky_window.visual, conky_window.width, conky_window.height)
     local cr = cairo_create(cs)
     
-    -- Define widget geometry (match conky.config limits)
     local width = conky_window.width
     local height = conky_window.height
-    local radius = 20  -- THE CORNER RADIUS IN PIXELS
+    local radius = 20  
     
     -- Define background color and alpha
     -- Values are R, G, B, Alpha (0.0 to 1.0)
@@ -20,7 +18,6 @@ function conky_draw_bg()
     local r, g, b, a = 0.14, 0.14, 0.14, 0.55
     
     -- CREATE THE ROUNDED RECTANGLE PATH
-    -- Drawing logic: Move to top-right start point, then draw arcs for corners
     cairo_move_to(cr, radius, 0)
     cairo_line_to(cr, width - radius, 0)
     cairo_arc(cr, width - radius, radius, radius, -math.pi/2, 0)
